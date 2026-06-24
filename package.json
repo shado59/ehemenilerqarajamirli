@@ -5,7 +5,6 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "et": "next build",
     "start": "next start",
     "lint": "next lint"
   },
@@ -13,7 +12,7 @@
     "autoprefixer": "10.4.14",
     "clsx": "1.2.1",
     "lucide-react": "0.270.0",
-    "next": "14.0.0",
+    "next": "14.2.15",
     "octokit": "^5.0.5",
     "postcss": "8.4.24",
     "react": "18.2.0",

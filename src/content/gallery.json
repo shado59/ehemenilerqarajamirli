@@ -1,0 +1,205 @@
+{
+  "id": "gallery",
+  "visible": true,
+  "order": 1,
+  "title": {
+    "az": "Foto Qalereya",
+    "en": "Photo Gallery"
+  },
+  "subtitle": {
+    "az": "Qazıntı və tədqiqat prosesindən şəkillər",
+    "en": "Photos from excavation and research process"
+  },
+  "categories": [
+    {
+      "id": "category-excavation",
+      "visible": true,
+      "order": 1,
+      "content": {
+        "name": {
+          "az": "Qazıntılar",
+          "en": "Excavations"
+        }
+      }
+    },
+    {
+      "id": "category-artifacts",
+      "visible": true,
+      "order": 2,
+      "content": {
+        "name": {
+          "az": "Tapıntılar",
+          "en": "Artifacts"
+        }
+      }
+    },
+    {
+      "id": "category-site",
+      "visible": true,
+      "order": 3,
+      "content": {
+        "name": {
+          "az": "Sahə",
+          "en": "Site"
+        }
+      }
+    },
+    {
+      "id": "category-team",
+      "visible": true,
+      "order": 4,
+      "content": {
+        "name": {
+          "az": "Komanda",
+          "en": "Team"
+        }
+      }
+    }
+  ],
+  "items": [
+    {
+      "id": "gallery-1",
+      "visible": true,
+      "order": 1,
+      "category": "category-excavation",
+      "image": "/images/gallery/excavation-1.jpg",
+      "thumbnail": "/images/gallery/thumbs/excavation-1-thumb.jpg",
+      "content": {
+        "caption": {
+          "az": "Şimal qanadın qazıntı işləri, 2020",
+          "en": "Excavation works in the north wing, 2020"
+        },
+        "description": {
+          "az": "Arxeoloqlar tərəfindən aparılan sistemli qazıntılar",
+          "en": "Systematic excavations conducted by archaeologists"
+        }
+      }
+    },
+    {
+      "id": "gallery-2",
+      "visible": true,
+      "order": 2,
+      "category": "category-artifacts",
+      "image": "/images/gallery/artifact-1.jpg",
+      "thumbnail": "/images/gallery/thumbs/artifact-1-thumb.jpg",
+      "content": {
+        "caption": {
+          "az": "Keramika qabların detalları",
+          "en": "Details of ceramic vessels"
+        },
+        "description": {
+          "az": "Əhəmənilər dövrünə aid keramika nümunələri",
+          "en": "Ceramic samples from the Achaemenid period"
+        }
+      }
+    },
+    {
+      "id": "gallery-3",
+      "visible": true,
+      "order": 3,
+      "category": "category-site",
+      "image": "/images/gallery/site-1.jpg",
+      "thumbnail": "/images/gallery/thumbs/site-1-thumb.jpg",
+      "content": {
+        "caption": {
+          "az": "Qaracəmirli sahəsinin ümumi görünüşü",
+          "en": "General view of Qaracamirli site"
+        },
+        "description": {
+          "az": "Havadan çəkilmiş sahə fotoşəkli",
+          "en": "Aerial photo of the site"
+        }
+      }
+    },
+    {
+      "id": "gallery-4",
+      "visible": true,
+      "order": 4,
+      "category": "category-team",
+      "image": "/images/gallery/team-1.jpg",
+      "thumbnail": "/images/gallery/thumbs/team-1-thumb.jpg",
+      "content": {
+        "caption": {
+          "az": "Ekspedisiya komandası, 2021",
+          "en": "Expedition team, 2021"
+        },
+        "description": {
+          "az": "Beynəlxalq ekspertlərdən ibarət komanda",
+          "en": "Team consisting of international experts"
+        }
+      }
+    },
+    {
+      "id": "gallery-5",
+      "visible": true,
+      "order": 5,
+      "category": "category-excavation",
+      "image": "/images/gallery/excavation-2.jpg",
+      "thumbnail": "/images/gallery/thumbs/excavation-2-thumb.jpg",
+      "content": {
+        "caption": {
+          "az": "Mərkəzi həyətin qazıntısı",
+          "en": "Excavation of central courtyard"
+        },
+        "description": {
+          "az": "Həyət strukturunun aşkarlanması",
+          "en": "Discovery of courtyard structure"
+        }
+      }
+    },
+    {
+      "id": "gallery-6",
+      "visible": true,
+      "order": 6,
+      "category": "category-artifacts",
+      "image": "/images/gallery/artifact-2.jpg",
+      "thumbnail": "/images/gallery/thumbs/artifact-2-thumb.jpg",
+      "content": {
+        "caption": {
+          "az": "Sütun başlığı detalları",
+          "en": "Column capital details"
+        },
+        "description": {
+          "az": "Protom üslubunda sütun başlığı",
+          "en": "Column capital in protom style"
+        }
+      }
+    },
+    {
+      "id": "gallery-7",
+      "visible": true,
+      "order": 7,
+      "category": "category-site",
+      "image": "/images/gallery/site-2.jpg",
+      "thumbnail": "/images/gallery/thumbs/site-2-thumb.jpg",
+      "content": {
+        "caption": {
+          "az": "Sarayın cənub qanadı",
+          "en": "South wing of the palace"
+        },
+        "description": {
+          "az": "Qazıntıdan sonrakı vəziyyət",
+          "en": "Condition after excavation"
+        }
+      }
+    },
+    {
+      "id": "gallery-8",
+      "visible": true,
+      "order": 8,
+      "category": "category-team",
+      "image": "/images/gallery/team-2.jpg",
+      "thumbnail": "/images/gallery/thumbs/team-2-thumb.jpg",
+      "content": {
+        "caption": {
+          "az": "Sahə işləri zamanı",
+          "en": "During field work"
+        },
+        "description": {
+          "az": "Arxeoloqların gündəlik işi",
+          "en": "Daily work of archaeologists"
+        }
+      }
+    }
+  ]
+}

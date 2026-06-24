@@ -1,0 +1,138 @@
+{
+  "title": {
+    "az": "Qazıntılar və Tədqiqatlar",
+    "en": "Excavations & Research"
+  },
+  "subtitle": {
+    "az": "Qaracəmirli sahəsində aparılan arxeoloji işlərin nəticələri",
+    "en": "Results of archaeological work at the Qaracamirli site"
+  },
+  "items": [
+    {
+      "id": "exc-1",
+      "image": "/images/excavations/overview-2023.jpg",
+      "content": {
+        "title": {
+          "az": "Sahənin Ümumi Görünüşü - 2023",
+          "en": "Site Overview - 2023"
+        },
+        "description": {
+          "az": "2023-cü il qazıntı kampaniyası zamanı havadan çəkilmiş foto. Sarayın ümumi planı və qazıntı sahələri görünür.",
+          "en": "Aerial photograph taken during the 2023 excavation campaign. The general plan of the palace and excavation areas are visible."
+        },
+        "category": {
+          "az": "Sahə görünüşü",
+          "en": "Site overview"
+        },
+        "year": "2023"
+      },
+      "visible": true,
+      "order": 1
+    },
+    {
+      "id": "exc-2",
+      "image": "/images/excavations/team-at-work.jpg",
+      "content": {
+        "title": {
+          "az": "Ekspedisiya Komandası",
+          "en": "Expedition Team at Work"
+        },
+        "description": {
+          "az": "Azərbaycan-Almaniya arxeoloji ekspedisiyasının üzvləri sahədə işləyir. Əməkdaşlıq və tədqiqat prosesi.",
+          "en": "Members of the Azerbaijan-Germany archaeological expedition working in the field. Collaboration and research process."
+        },
+        "category": {
+          "az": "Ekspedisiya",
+          "en": "Expedition"
+        },
+        "year": "2022"
+      },
+      "visible": true,
+      "order": 2
+    },
+    {
+      "id": "exc-3",
+      "image": "/images/excavations/documentation.jpg",
+      "content": {
+        "title": {
+          "az": "Arxeoloji Sənədləşdirmə",
+          "en": "Archaeological Documentation"
+        },
+        "description": {
+          "az": "Tapıntıların sənədləşdirilməsi və kataloqlaşdırılması prosesi. Hər tapıntı diqqətlə qeyd olunur.",
+          "en": "Process of documenting and cataloging finds. Each artifact is carefully recorded."
+        },
+        "category": {
+          "az": "Sənədləşdirmə",
+          "en": "Documentation"
+        },
+        "year": "2021"
+      },
+      "visible": true,
+      "order": 3
+    },
+    {
+      "id": "exc-4",
+      "image": "/images/excavations/stratigraphy.jpg",
+      "content": {
+        "title": {
+          "az": "Stratiqrafiya Tədqiqatı",
+          "en": "Stratigraphy Study"
+        },
+        "description": {
+          "az": "Torpaq qatlarının tədqiqi. Sahənin tarixi inkişafını başa düşmək üçün vacib metod.",
+          "en": "Study of soil layers. Essential method for understanding the historical development of the site."
+        },
+        "category": {
+          "az": "Tədqiqat",
+          "en": "Research"
+        },
+        "year": "2022"
+      },
+      "visible": true,
+      "order": 4
+    },
+    {
+      "id": "exc-5",
+      "image": "/images/excavations/survey.jpg",
+      "content": {
+        "title": {
+          "az": "Sahə Tədqiqatı",
+          "en": "Site Survey"
+        },
+        "description": {
+          "az": "Qaracəmirli ərazisinin ətraflı tədqiqi. Topoqrafik və geofiziki metodlardan istifadə.",
+          "en": "Detailed survey of the Qaracamirli area. Use of topographic and geophysical methods."
+        },
+        "category": {
+          "az": "Tədqiqat",
+          "en": "Research"
+        },
+        "year": "2020"
+      },
+      "visible": true,
+      "order": 5
+    },
+    {
+      "id": "exc-6",
+      "image": "/images/excavations/fieldwork.jpg",
+      "content": {
+        "title": {
+          "az": "Sahə İşləri",
+          "en": "Fieldwork"
+        },
+        "description": {
+          "az": "Qazıntı prosesinin gündəlik işləri. Dəqiq metod və diqqət tələb edir.",
+          "en": "Daily work of the excavation process. Requires precise methods and attention."
+        },
+        "category": {
+          "az": "Qazıntı",
+          "en": "Excavation"
+        },
+        "year": "2023"
+      },
+      "visible": true,
+      "order": 6
+    }
+  ]
+}

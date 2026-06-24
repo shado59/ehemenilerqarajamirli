@@ -1,0 +1,123 @@
+{
+  "id": "timeline",
+  "visible": true,
+  "order": 1,
+  "title": {
+    "az": "Tarixi Zaman Cədvəli",
+    "en": "Historical Timeline"
+  },
+  "items": [
+    {
+      "id": "timeline-1",
+      "visible": true,
+      "order": 1,
+      "year": "550 BCE",
+      "content": {
+        "title": {
+          "az": "Əhəmənilər İmperiyasının Yaranması",
+          "en": "Formation of Achaemenid Empire"
+        },
+        "description": {
+          "az": "II Kir tərəfindən Əhəmənilər İmperiyasının qurulması",
+          "en": "Establishment of the Achaemenid Empire by Cyrus II"
+        }
+      }
+    },
+    {
+      "id": "timeline-2",
+      "visible": true,
+      "order": 2,
+      "year": "530 BCE",
+      "content": {
+        "title": {
+          "az": "Azərbaycanın Əhəmənilər Tərəfindən İşğalı",
+          "en": "Achaemenid Conquest of Azerbaijan"
+        },
+        "description": {
+          "az": "Azərbaycan ərazisinin Əhəmənilər imperiyasına qatılması",
+          "en": "Incorporation of Azerbaijan territory into the Achaemenid Empire"
+        }
+      }
+    },
+    {
+      "id": "timeline-3",
+      "visible": true,
+      "order": 3,
+      "year": "500 BCE",
+      "content": {
+        "title": {
+          "az": "Qaracəmirli Sarayının Tikintisi",
+          "en": "Construction of Qaracamirli Palace"
+        },
+        "description": {
+          "az": "Şəmkir rayonunda Əhəmənilər saray kompleksinin inşası",
+          "en": "Construction of the Achaemenid palace complex in Shamkir district"
+        }
+      }
+    },
+    {
+      "id": "timeline-4",
+      "visible": true,
+      "order": 4,
+      "year": "330 BCE",
+      "content": {
+        "title": {
+          "az": "İmperiyanın Süqutu",
+          "en": "Fall of the Empire"
+        },
+        "description": {
+          "az": "Makedoniyalı İsgəndər tərəfindən Əhəmənilər imperiyasının işğalı",
+          "en": "Conquest of the Achaemenid Empire by Alexander the Great"
+        }
+      }
+    },
+    {
+      "id": "timeline-5",
+      "visible": true,
+      "order": 5,
+      "year": "2006",
+      "content": {
+        "title": {
+          "az": "Kəşfiyyat Qazıntıları",
+          "en": "Exploratory Excavations"
+        },
+        "description": {
+          "az": "Qaracəmirli ərazisində ilk arxeoloji qazıntıların başlaması",
+          "en": "Beginning of first archaeological excavations in Qaracamirli area"
+        }
+      }
+    },
+    {
+      "id": "timeline-6",
+      "visible": true,
+      "order": 6,
+      "year": "2010",
+      "content": {
+        "title": {
+          "az": "Sarayın Müəyyən Edilməsi",
+          "en": "Identification of the Palace"
+        },
+        "description": {
+          "az": "Qazıntılar nəticəsində Əhəmənilər sarayının aşkarlanması",
+          "en": "Discovery of the Achaemenid palace as a result of excavations"
+        }
+      }
+    },
+    {
+      "id": "timeline-7",
+      "visible": true,
+      "order": 7,
+      "year": "2020",
+      "content": {
+        "title": {
+          "az": "Sistemli Tədqiqatlar",
+          "en": "Systematic Research"
+        },
+        "description": {
+          "az": "Beynəlxalq ekspertlərin iştirakı ilə sistemli arxeoloji tədqiqatlar",
+          "en": "Systematic archaeological research with international experts"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,193 @@
+{
+  "id": "research",
+  "visible": true,
+  "order": 1,
+  "title": {
+    "az": "Tədqiqat və Nəşrlər",
+    "en": "Research and Publications"
+  },
+  "subtitle": {
+    "az": "Elmi hesabatlar, nəşrlər və xarici istinadlar",
+    "en": "Scientific reports, publications and external references"
+  },
+  "publications": [
+    {
+      "id": "pub-1",
+      "visible": true,
+      "order": 1,
+      "content": {
+        "title": {
+          "az": "Qaracəmirli Əhəmənilər Sarayı: İlk Nəticələr",
+          "en": "Qaracamirli Achaemenid Palace: Preliminary Results"
+        },
+        "authors": {
+          "az": "Dr. Əli Vəliyev, Prof. Michael Brown",
+          "en": "Dr. Ali Valiyev, Prof. Michael Brown"
+        },
+        "journal": {
+          "az": "Azərbaycan Arxeologiyası Jurnalı",
+          "en": "Journal of Azerbaijani Archaeology"
+        },
+        "year": "2021",
+        "abstract": {
+          "az": "Bu məqalədə 2010-2020-ci illərdə aparılan qazıntıların ilk nəticələri təqdim olunur. Sarayın memarlıq xüsusiyyətləri və tapıntılar analiz edilir.",
+          "en": "This article presents preliminary results of excavations conducted in 2010-2020. Architectural features of the palace and findings are analyzed."
+        },
+        "url": "https://example.com/publication1"
+      }
+    },
+    {
+      "id": "pub-2",
+      "visible": true,
+      "order": 2,
+      "content": {
+        "title": {
+          "az": "Əhəmənilər Memarlığı Azərbaycanda",
+          "en": "Achaemenid Architecture in Azerbaijan"
+        },
+        "authors": {
+          "az": "Prof. Sara Hüseynova",
+          "en": "Prof. Sara Huseynova"
+        },
+        "journal": {
+          "az": "Qədim Şərq Tədqiqatları",
+          "en": "Ancient Near Eastern Studies"
+        },
+        "year": "2022",
+        "abstract": {
+          "az": "Azərbaycan ərazisindəki Əhəmənilər dövrü abidələrinin memarlıq analizi. Qaracəmirli sarayı müqayisəli tədqiqat obyekti kimi nəzərdən keçirilir.",
+          "en": "Architectural analysis of Achaemenid period monuments in Azerbaijan. Qaracamirli palace is examined as a comparative research object."
+        },
+        "url": "https://example.com/publication2"
+      }
+    },
+    {
+      "id": "pub-3",
+      "visible": true,
+      "order": 3,
+      "content": {
+        "title": {
+          "az": "Keramika Tapıntılarının Petroqrafik Təhlili",
+          "en": "Petrographic Analysis of Ceramic Finds"
+        },
+        "authors": {
+          "az": "Dr. Nizami Quliyev, Dr. Anna Schmidt",
+          "en": "Dr. Nizami Guliyev, Dr. Anna Schmidt"
+        },
+        "journal": {
+          "az": "Arxeometriya Beynəlxalq Jurnalı",
+          "en": "International Journal of Archaeometry"
+        },
+        "year": "2023",
+        "abstract": {
+          "az": "Qaracəmirlidən olan keramika nümunələrinin petroqrafik təhlili. Nəticələr yerli istehsalın mövcudluğunu göstərir.",
+          "en": "Petrographic analysis of ceramic samples from Qaracamirli. Results indicate the existence of local production."
+        },
+        "url": "https://example.com/publication3"
+      }
+    }
+  ],
+  "reports": [
+    {
+      "id": "report-1",
+      "visible": true,
+      "order": 1,
+      "content": {
+        "title": {
+          "az": "2020-ci İl Qazıntı Hesabatı",
+          "en": "2020 Excavation Report"
+        },
+        "description": {
+          "az": "Şimal qanadın qazıntıları üzrə texniki hesabat",
+          "en": "Technical report on north wing excavations"
+        },
+        "file": "/reports/excavation-2020.pdf",
+        "pages": 45
+      }
+    },
+    {
+      "id": "report-2",
+      "visible": true,
+      "order": 2,
+      "content": {
+        "title": {
+          "az": "2021-ci İl Qazıntı Hesabatı",
+          "en": "2021 Excavation Report"
+        },
+        "description": {
+          "az": "Mərkəzi həyətin qazıntıları üzrə texniki hesabat",
+          "en": "Technical report on central courtyard excavations"
+        },
+        "file": "/reports/excavation-2021.pdf",
+        "pages": 52
+      }
+    },
+    {
+      "id": "report-3",
+      "visible": true,
+      "order": 3,
+      "content": {
+        "title": {
+          "az": "Rəqəmsal Bərpa Layihəsi",
+          "en": "Digital Reconstruction Project"
+        },
+        "description": {
+          "az": "3D modelləşdirmə və rəqəmsal bərpa metodologiyası",
+          "en": "3D modeling and digital reconstruction methodology"
+        },
+        "file": "/reports/digital-reconstruction.pdf",
+        "pages": 38
+      }
+    }
+  ],
+  "externalReferences": [
+    {
+      "id": "ref-1",
+      "visible": true,
+      "order": 1,
+      "content": {
+        "title": {
+          "az": "Azərbaycan Milli Elmlər Akademiyası",
+          "en": "Azerbaijan National Academy of Sciences"
+        },
+        "url": "https://anas.az",
+        "description": {
+          "az": "Arxeologiya və Etnoqrafiya İnstitutu",
+          "en": "Institute of Archaeology and Ethnography"
+        }
+      }
+    },
+    {
+      "id": "ref-2",
+      "visible": true,
+      "order": 2,
+      "content": {
+        "title": {
+          "az": "UNESCO World Heritage Centre",
+          "en": "UNESCO World Heritage Centre"
+        },
+        "url": "https://whc.unesco.org",
+        "description": {
+          "az": "Dünya Mirası Siyahısı",
+          "en": "World Heritage List"
+        }
+      }
+    },
+    {
+      "id": "ref-3",
+      "visible": true,
+      "order": 3,
+      "content": {
+        "title": {
+          "az": "Persepolis Tədqiqat Fondu",
+          "en": "Persepolis Research Foundation"
+        },
+        "url": "https://persepolis.research",
+        "description": {
+          "az": "Əhəmənilər tədqiqatları üzrə beynəlxalq təşkilat",
+          "en": "International organization for Achaemenid research"
+        }
+      }
+    }
+  ]
+}

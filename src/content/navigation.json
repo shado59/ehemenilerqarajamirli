@@ -1,0 +1,115 @@
+{
+  "id": "navigation",
+  "visible": true,
+  "order": 1,
+  "items": [
+    {
+      "id": "nav-home",
+      "visible": true,
+      "order": 1,
+      "content": {
+        "label": {
+          "az": "Ana Səhifə",
+          "en": "Home"
+        },
+        "href": "#home"
+      }
+    },
+    {
+      "id": "nav-timeline",
+      "visible": true,
+      "order": 2,
+      "content": {
+        "label": {
+          "az": "Tarix",
+          "en": "Timeline"
+        },
+        "href": "#timeline"
+      }
+    },
+    {
+      "id": "nav-significance",
+      "visible": true,
+      "order": 3,
+      "content": {
+        "label": {
+          "az": "Əhəmiyyəti",
+          "en": "Significance"
+        },
+        "href": "#significance"
+      }
+    },
+    {
+      "id": "nav-map",
+      "visible": true,
+      "order": 4,
+      "content": {
+        "label": {
+          "az": "Xəritə",
+          "en": "Map"
+        },
+        "href": "#map"
+      }
+    },
+    {
+      "id": "nav-artifacts",
+      "visible": true,
+      "order": 5,
+      "content": {
+        "label": {
+          "az": "Tapıntılar",
+          "en": "Artifacts"
+        },
+        "href": "#artifacts"
+      }
+    },
+    {
+      "id": "nav-reconstruction",
+      "visible": true,
+      "order": 6,
+      "content": {
+        "label": {
+          "az": "Bərpa",
+          "en": "Reconstruction"
+        },
+        "href": "#reconstruction"
+      }
+    },
+    {
+      "id": "nav-research",
+      "visible": true,
+      "order": 7,
+      "content": {
+        "label": {
+          "az": "Tədqiqatlar",
+          "en": "Research"
+        },
+        "href": "#research"
+      }
+    },
+    {
+      "id": "nav-gallery",
+      "visible": true,
+      "order": 8,
+      "content": {
+        "label": {
+          "az": "Qalereya",
+          "en": "Gallery"
+        },
+        "href": "#gallery"
+      }
+    },
+    {
+      "id": "nav-team",
+      "visible": true,
+      "order": 9,
+      "content": {
+        "label": {
+          "az": "Komanda",
+          "en": "Team"
+        },
+        "href": "#team"
+      }
+    }
+  ]
+}

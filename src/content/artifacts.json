@@ -1,0 +1,197 @@
+{
+  "id": "artifacts",
+  "visible": true,
+  "order": 1,
+  "title": {
+    "az": "Arxeoloji Tapıntılar",
+    "en": "Archaeological Finds"
+  },
+  "subtitle": {
+    "az": "Qazıntılar zamanı aşkar edilmiş qiymətli əsərlər",
+    "en": "Valuable artifacts discovered during excavations"
+  },
+  "items": [
+    {
+      "id": "artifact-1",
+      "visible": true,
+      "order": 1,
+      "images": [
+        "/images/artifacts/ceramic-1.jpg",
+        "/images/artifacts/ceramic-2.jpg"
+      ],
+      "content": {
+        "title": {
+          "az": "Keramika Qablar",
+          "en": "Ceramic Vessels"
+        },
+        "description": {
+          "az": "Əhəmənilər dövrünə aid yüksək keyfiyyətli keramika qablar. Bu qablar həm məişət, həm də mərasim məqsədləri üçün istifadə olunub.",
+          "en": "High-quality ceramic vessels from the Achaemenid period. These vessels were used for both household and ceremonial purposes."
+        },
+        "period": {
+          "az": "Əhəmənilər dövrü, e.ə. VI-V əsrlər",
+          "en": "Achaemenid period, 6th-5th centuries BCE"
+        },
+        "material": {
+          "az": "Keramika",
+          "en": "Ceramic"
+        },
+        "location": {
+          "az": "Şimal qanad, Otaq 3",
+          "en": "North wing, Room 3"
+        }
+      }
+    },
+    {
+      "id": "artifact-2",
+      "visible": true,
+      "order": 2,
+      "images": [
+        "/images/artifacts/coin-1.jpg"
+      ],
+      "content": {
+        "title": {
+          "az": "Əhəmənilər Sikkələri",
+          "en": "Achaemenid Coins"
+        },
+        "description": {
+          "az": "III Daranın dövrünə aid gümüş sikkələr. Sikkələr kralın portreti və qədim fars yazıları ilə bəzədilib.",
+          "en": "Silver coins from the reign of Darius III. The coins are decorated with the king's portrait and ancient Persian inscriptions."
+        },
+        "period": {
+          "az": "Əhəmənilər dövrü, e.ə. IV əsr",
+          "en": "Achaemenid period, 4th century BCE"
+        },
+        "material": {
+          "az": "Gümüş",
+          "en": "Silver"
+        },
+        "location": {
+          "az": "Mərkəzi həyət",
+          "en": "Central courtyard"
+        }
+      }
+    },
+    {
+      "id": "artifact-3",
+      "visible": true,
+      "order": 3,
+      "images": [
+        "/images/artifacts/column-1.jpg",
+        "/images/artifacts/column-2.jpg"
+      ],
+      "content": {
+        "title": {
+          "az": "Sütun Başlıqları",
+          "en": "Column Capitals"
+        },
+        "description": {
+          "az": "Əhəmənilər memarlığına xarakterik protom üslubunda sütun başlıqları. Bu başlıqlar buynuzlu heyvan fiqurları ilə bəzədilib.",
+          "en": "Column capitals in the protom style characteristic of Achaemenid architecture. These capitals are decorated with horned animal figures."
+        },
+        "period": {
+          "az": "Əhəmənilər dövrü, e.ə. V əsr",
+          "en": "Achaemenid period, 5th century BCE"
+        },
+        "material": {
+          "az": "Daş",
+          "en": "Stone"
+        },
+        "location": {
+          "az": "Əsas giriş zalı",
+          "en": "Main entrance hall"
+        }
+      }
+    },
+    {
+      "id": "artifact-4",
+      "visible": true,
+      "order": 4,
+      "images": [
+        "/images/artifacts/jewelry-1.jpg"
+      ],
+      "content": {
+        "title": {
+          "az": "Qızıl Bəzək Əşyaları",
+          "en": "Gold Jewelry"
+        },
+        "description": {
+          "az": "İncə işlənmiş qızıl boyunbağıları və üzüklər. Bu əşyalar sarayın yüksək statuslu sakinlərinə aid olub.",
+          "en": "Finely crafted gold necklaces and rings. These items belonged to high-status residents of the palace."
+        },
+        "period": {
+          "az": "Əhəmənilər dövrü, e.ə. V-IV əsrlər",
+          "en": "Achaemenid period, 5th-4th centuries BCE"
+        },
+        "material": {
+          "az": "Qızıl",
+          "en": "Gold"
+        },
+        "location": {
+          "az": "Cənub qanad, Otaq 7",
+          "en": "South wing, Room 7"
+        }
+      }
+    },
+    {
+      "id": "artifact-5",
+      "visible": true,
+      "order": 5,
+      "images": [
+        "/images/artifacts/seal-1.jpg"
+      ],
+      "content": {
+        "title": {
+          "az": "Möhür Sikkələri",
+          "en": "Seal Impressions"
+        },
+        "description": {
+          "az": "Rəsmi sənədləri təsdiq etmək üçün istifadə olunan möhür sikkələri. Hər bir möhür unikal dizayna malikdir.",
+          "en": "Seal impressions used to authenticate official documents. Each seal has a unique design."
+        },
+        "period": {
+          "az": "Əhəmənilər dövrü, e.ə. V əsr",
+          "en": "Achaemenid period, 5th century BCE"
+        },
+        "material": {
+          "az": "Gil",
+          "en": "Clay"
+        },
+        "location": {
+          "az": "Arxiv otağı",
+          "en": "Archive room"
+        }
+      }
+    },
+    {
+      "id": "artifact-6",
+      "visible": true,
+      "order": 6,
+      "images": [
+        "/images/artifacts/tool-1.jpg"
+      ],
+      "content": {
+        "title": {
+          "az": "Dəmir Alətlər",
+          "en": "Iron Tools"
+        },
+        "description": {
+          "az": "Sarayın inşası və bərpasında istifadə olunan dəmir alətlər. Bu alətlər o dövrün metal işləmə texnologiyasını göstərir.",
+          "en": "Iron tools used in the construction and maintenance of the palace. These tools demonstrate the metalworking technology of the period."
+        },
+        "period": {
+          "az": "Əhəmənilər dövrü, e.ə. VI-V əsrlər",
+          "en": "Achaemenid period, 6th-5th centuries BCE"
+        },
+        "material": {
+          "az": "Dəmir",
+          "en": "Iron"
+        },
+        "location": {
+          "az": "İstehsal sahəsi",
+          "en": "Production area"
+        }
+      }
+    }
+  ]
+}

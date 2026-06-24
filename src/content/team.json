@@ -1,0 +1,159 @@
+{
+  "id": "team",
+  "visible": true,
+  "order": 1,
+  "title": {
+    "az": "Ekspedisiya Komandası",
+    "en": "Expedition Team"
+  },
+  "subtitle": {
+    "az": "Layihədə iştirak edən arxeoloqlar və tədqiqatçılar",
+    "en": "Archaeologists and researchers participating in the project"
+  },
+  "members": [
+    {
+      "id": "member-1",
+      "visible": true,
+      "order": 1,
+      "photo": "/images/team/ali-valiyev.jpg",
+      "content": {
+        "name": {
+          "az": "Dr. Əli Vəliyev",
+          "en": "Dr. Ali Valiyev"
+        },
+        "role": {
+          "az": "Layihə Rəhbəri",
+          "en": "Project Director"
+        },
+        "biography": {
+          "az": "Dr. Əli Vəliyev Azərbaycan Milli Elmlər Akademiyasının Arxeologiya və Etnoqrafiya İnstitutunda professor çalışır. O, 20 ildən artıqdır ki, Azərbaycanın qədim abidələrinin tədqiqi ilə məşğul olur.",
+          "en": "Dr. Ali Valiyev is a professor at the Institute of Archaeology and Ethnography of the Azerbaijan National Academy of Sciences. He has been researching ancient monuments in Azerbaijan for over 20 years."
+        },
+        "specialization": {
+          "az": "Əhəmənilər arxeologiyası",
+          "en": "Achaemenid archaeology"
+        }
+      }
+    },
+    {
+      "id": "member-2",
+      "visible": true,
+      "order": 2,
+      "photo": "/images/team/sara-huseynova.jpg",
+      "content": {
+        "name": {
+          "az": "Prof. Sara Hüseynova",
+          "en": "Prof. Sara Huseynova"
+        },
+        "role": {
+          "az": "Memarlıq Tarixçisi",
+          "en": "Architectural Historian"
+        },
+        "biography": {
+          "az": "Prof. Sara Hüseynova Bakı Dövlət Universitetində memarlıq tarixi üzrə professor kimi çalışır. O, Qədim Şərq memarlığı üzrə mütəxəssisdir.",
+          "en": "Prof. Sara Huseynova works as a professor of architectural history at Baku State University. She is a specialist in Ancient Near Eastern architecture."
+        },
+        "specialization": {
+          "az": "Qədim memarlıq",
+          "en": "Ancient architecture"
+        }
+      }
+    },
+    {
+      "id": "member-3",
+      "visible": true,
+      "order": 3,
+      "photo": "/images/team/michael-brown.jpg",
+      "content": {
+        "name": {
+          "az": "Prof. Michael Brown",
+          "en": "Prof. Michael Brown"
+        },
+        "role": {
+          "az": "Beynəlxalq Məsləhətçi",
+          "en": "International Consultant"
+        },
+        "biography": {
+          "az": "Prof. Michael Brown Oksford Universitetində İran arxeologiyası professorudur. O, Əhəmənilər imperiyası üzrə aparıcı mütəxəssislərdən biridir.",
+          "en": "Prof. Michael Brown is a professor of Iranian archaeology at Oxford University. He is one of the leading specialists on the Achaemenid Empire."
+        },
+        "specialization": {
+          "az": "İran arxeologiyası",
+          "en": "Iranian archaeology"
+        }
+      }
+    },
+    {
+      "id": "member-4",
+      "visible": true,
+      "order": 4,
+      "photo": "/images/team/nizami-guliyev.jpg",
+      "content": {
+        "name": {
+          "az": "Dr. Nizami Quliyev",
+          "en": "Dr. Nizami Guliyev"
+        },
+        "role": {
+          "az": "Arxeometriya Mütəxəssisi",
+          "en": "Archaeometry Specialist"
+        },
+        "biography": {
+          "az": "Dr. Nizami Quliyev arxeometriya və materialların təhlili üzrə mütəxəssisdir. O, keramika və metal tapıntıların laboratoriya təhlilini həyata keçirir.",
+          "en": "Dr. Nizami Guliyev is a specialist in archaeometry and material analysis. He conducts laboratory analysis of ceramic and metal finds."
+        },
+        "specialization": {
+          "az": "Arxeometriya",
+          "en": "Archaeometry"
+        }
+      }
+    },
+    {
+      "id": "member-5",
+      "visible": true,
+      "order": 5,
+      "photo": "/images/team/anna-schmidt.jpg",
+      "content": {
+        "name": {
+          "az": "Dr. Anna Schmidt",
+          "en": "Dr. Anna Schmidt"
+        },
+        "role": {
+          "az": "Keramika Eksperti",
+          "en": "Ceramics Expert"
+        },
+        "biography": {
+          "az": "Dr. Anna Schmidt Berlin Dövlət Muzeylərində keramika üzrə kurator çalışır. O, Qədim Şərq keramikası üzrə beynəlxalq tanınmış mütəxəssisdir.",
+          "en": "Dr. Anna Schmidt works as a ceramics curator at the Berlin State Museums. She is an internationally recognized specialist in Ancient Near Eastern ceramics."
+        },
+        "specialization": {
+          "az": "Keramika",
+          "en": "Ceramics"
+        }
+      }
+    },
+    {
+      "id": "member-6",
+      "visible": true,
+      "order": 6,
+      "photo": "/images/team/kamal-aliyev.jpg",
+      "content": {
+        "name": {
+          "az": "Kamal Əliyev",
+          "en": "Kamal Aliyev"
+        },
+        "role": {
+          "az": "Sahə Arxeoloqu",
+          "en": "Field Archaeologist"
+        },
+        "biography": {
+          "az": "Kamal Əliyev 10 ildən artıqdır ki, sahə arxeologiyası ilə məşğul olur. O, Qaracəmirli layihəsində sahə qazıntılarının aparılmasına cavabdehdir.",
+          "en": "Kamal Aliyev has been working in field archaeology for over 10 years. He is responsible for conducting field excavations in the Qaracamirli project."
+        },
+        "specialization": {
+          "az": "Sahə arxeologiyası",
+          "en": "Field archaeology"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "id": "settings",
+  "visible": true,
+  "order": 1,
+  "content": {
+    "siteName": {
+      "az": "Qaracəmirli Əhəmənilər Sarayı",
+      "en": "Qaracamirli Achaemenid Palace"
+    },
+    "defaultLanguage": "az",
+    "availableLanguages": ["az", "en"],
+    "defaultTheme": "light",
+    "availableThemes": ["light", "dark"],
+    "contact": {
+      "email": "info@qaracamirli.az",
+      "phone": "+994 12 123 45 67",
+      "address": {
+        "az": "Şəmkir rayonu, Qaracəmirli kəndi, Azərbaycan",
+        "en": "Qaracamirli village, Shamkir district, Azerbaijan"
+      }
+    },
+    "social": {
+      "facebook": "https://facebook.com/qaracamirli",
+      "instagram": "https://instagram.com/qaracamirli",
+      "twitter": "https://twitter.com/qaracamirli",
+      "youtube": "https://youtube.com/qaracamirli"
+    },
+    "seo": {
+      "ogTitle": {
+        "az": "Qaracəmirli Əhəmənilər Sarayı - Arxeoloji Muzey",
+        "en": "Qaracamirli Achaemenid Palace - Archaeological Museum"
+      },
+      "ogDescription": {
+        "az": "Şəmkir rayonunda qədim Əhəmənilər sarayının arxeoloji tədqiqatları və tarixi əhəmiyyəti",
+        "en": "Archaeological research and historical significance of the ancient Achaemenid palace in Shamkir district"
+      },
+      "ogImage": "/images/og-image.jpg",
+      "twitterCard": "summary_large_image"
+    }
+  },
+  "metadata": {
+    "slug": "settings",
+    "createdAt": "2024-01-01",
+    "updatedAt": "2024-01-01"
+  }
+}

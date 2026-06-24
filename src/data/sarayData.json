@@ -1,0 +1,32 @@
+{
+  "hero": {
+    "title": "Qaracəmirli Əhəmənilər Sarayı",
+    "subtitle": "Şəmkirdə tapılan, Cənubi Qafqazı idarə edən e.ə. V-IV əsrə aid möhtəşəm inzibati mərkəz",
+    "ekspedisiya": "Azərbaycan-Almaniya beynəlxalq arxeoloji ekspedisiyası (Rəhbərlər: Prof. İlyas Babayev və Florian Knauss)",
+    "bgImage": "/hero-place.jpg"
+  },
+  "sections": [
+    {
+      "id": "tarix",
+      "title": "Abidənin Tarixi və Əhəmiyyəti",
+      "text": "Təxminən 2500 il yaşı olan bu saray kompleksi və ətrafındakı antik şəhər qalıqları 20 hektar genişlikdə ərazini əhatə edir. Binalar böyük parklar və bağlarla əhatə olunmuş, imperiyanın ali təbəqəsi üçün mərkəz rolunu oynamışdır.",
+      "image": "/tarix-place.jpg"
+    },
+    {
+      "id": "memarliq",
+      "title": "28 Sütunlu Möhtəşəm Memarlıq",
+      "text": "Sarayın 8 metr enində giriş qapısı (propileon) və onun dərhal arxasında 675 kvadratmetrlik nəhəng mərkəzi audensiya (qəbul) zalı aşkar edilmişdir. Tapılan 30-dan çox daş sütun altlığı imperiyanın mərkəzləri olan Persepolis və Pasarqad şəhərlərindəki sarayların memarlıq üslubu ilə tamamilə eynidir.",
+      "image": "/sutun-place.jpg"
+    }
+  ],
+  "gallery": [
+    { "title": "28 Sütunlu Zalın Qalıqları", "img": "/gal1.jpg" },
+    { "title": "Daş Sütun Altlığı Nümunəsi", "img": "/gal2.jpg" },
+    { "title": "Elit Saxsı Qablar və Keramika", "img": "/gal3.jpg" },
+    { "title": "Arxeoloji Qazıntı Sahəsinin Planı", "img": "/gal4.jpg" }
+  ],
+  "sources": [
+    { "name": "Azərbaycan Milli Elmlər Akademiyası (AMEA) Hesabatları", "link": "#" },
+    { "name": "An Achaemenid Palace at Qarajamirli (Preliminary Report)", "link": "#" }
+  ]
+}

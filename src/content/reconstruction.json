@@ -1,0 +1,115 @@
+{
+  "id": "reconstruction",
+  "visible": true,
+  "order": 1,
+  "title": {
+    "az": "Bərpa və Rekonstruksiya",
+    "en": "Restoration and Reconstruction"
+  },
+  "subtitle": {
+    "az": "Qazıntılar və rəqəmsal bərpa nəticələri",
+    "en": "Excavation and digital reconstruction results"
+  },
+  "items": [
+    {
+      "id": "reconstruction-1",
+      "visible": true,
+      "order": 1,
+      "excavationImage": "/images/reconstruction/excavation-main.jpg",
+      "reconstructionImage": "/images/reconstruction/reconstruction-main.jpg",
+      "content": {
+        "title": {
+          "az": "Əsas Giriş Zalı",
+          "en": "Main Entrance Hall"
+        },
+        "description": {
+          "az": "Sarayın əsas giriş zalının qazıntı vəziyyəti və rəqəmsal bərpası. Zal dörd sütunlu portikoya malik idi.",
+          "en": "Excavation state and digital reconstruction of the palace's main entrance hall. The hall featured a four-column portico."
+        },
+        "excavationCaption": {
+          "az": "Qazıntı vəziyyəti, 2021",
+          "en": "Excavation state, 2021"
+        },
+        "reconstructionCaption": {
+          "az": "Rəqəmsal bərpa",
+          "en": "Digital reconstruction"
+        }
+      }
+    },
+    {
+      "id": "reconstruction-2",
+      "visible": true,
+      "order": 2,
+      "excavationImage": "/images/reconstruction/excavation-courtyard.jpg",
+      "reconstructionImage": "/images/reconstruction/reconstruction-courtyard.jpg",
+      "content": {
+        "title": {
+          "az": "Mərkəzi Həyət",
+          "en": "Central Courtyard"
+        },
+        "description": {
+          "az": "Mərkəzi həyətin qazıntı izləri və orijinal görünüşü. Həyət ətrafında müxtəlif funksiyalı otaqlar yerləşirdi.",
+          "en": "Excavation traces and original appearance of the central courtyard. Rooms with various functions were located around the courtyard."
+        },
+        "excavationCaption": {
+          "az": "Həyətin qazıntı izləri",
+          "en": "Excavation traces of courtyard"
+        },
+        "reconstructionCaption": {
+          "az": "Bərpa edilmiş görünüş",
+          "en": "Reconstructed appearance"
+        }
+      }
+    },
+    {
+      "id": "reconstruction-3",
+      "visible": true,
+      "order": 3,
+      "excavationImage": "/images/reconstruction/excavation-north.jpg",
+      "reconstructionImage": "/images/reconstruction/reconstruction-north.jpg",
+      "content": {
+        "title": {
+          "az": "Şimal Qanad",
+          "en": "North Wing"
+        },
+        "description": {
+          "az": "Şimal qanadın qalıqları və bərpası. Bu hissədə ehtimal ki, yaşayış otaqları yerləşirdi.",
+          "en": "Remains and reconstruction of the north wing. This section likely housed residential rooms."
+        },
+        "excavationCaption": {
+          "az": "Şimal qanad qalıqları",
+          "en": "North wing remains"
+        },
+        "reconstructionCaption": {
+          "az": "Bərpa edilmiş şimal qanad",
+          "en": "Reconstructed north wing"
+        }
+      }
+    },
+    {
+      "id": "reconstruction-4",
+      "visible": true,
+      "order": 4,
+      "excavationImage": "/images/reconstruction/excavation-south.jpg",
+      "reconstructionImage": "/images/reconstruction/reconstruction-south.jpg",
+      "content": {
+        "title": {
+          "az": "Cənub Qanad",
+          "en": "South Wing"
+        },
+        "description": {
+          "az": "Cənub qanadın strukturu və bərpası. Bu bölgədə adminstrativ və mərasim otaqları aşkar edilib.",
+          "en": "Structure and reconstruction of the south wing. Administrative and ceremonial rooms have been discovered in this area."
+        },
+        "excavationCaption": {
+          "az": "Cənub qanad strukturu",
+          "en": "South wing structure"
+        },
+        "reconstructionCaption": {
+          "az": "Bərpa edilmiş cənub qanad",
+          "en": "Reconstructed south wing"
+        }
+      }
+    }
+  ]
+}

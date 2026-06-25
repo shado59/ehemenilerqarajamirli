@@ -25,9 +25,7 @@ export class GitHubService {
   }
 
   async testConnection(): Promise<boolean> {
-    if (this.config.token === 'local') {
-      return true;
-    }
+    if (this.config.token === 'local') return true;
     if (!this.octokit) return false;
     try {
       await this.octokit.rest.repos.get({
@@ -36,15 +34,12 @@ export class GitHubService {
       });
       return true;
     } catch (error) {
-      console.error('GitHub connection test failed:', error);
       return false;
     }
   }
 
   async validateBranch(): Promise<boolean> {
-    if (this.config.token === 'local') {
-      return true;
-    }
+    if (this.config.token === 'local') return true;
     if (!this.octokit) return false;
     try {
       const branch = this.config.branch || 'main';
@@ -55,7 +50,6 @@ export class GitHubService {
       });
       return true;
     } catch (error) {
-      console.error('Branch validation failed:', error);
       return false;
     }
   }
@@ -68,7 +62,6 @@ export class GitHubService {
         const data = await response.json();
         return data.content;
       } catch (error) {
-        console.error(`Failed to read file locally: ${path}`, error);
         return null;
       }
     }
@@ -83,12 +76,11 @@ export class GitHubService {
         ref: branch,
       });
 
-      if ('content' in response.data) {
+      if ('content' in response.data && typeof response.data.content === 'string') {
         return Buffer.from(response.data.content, 'base64').toString('utf-8');
       }
       return null;
     } catch (error) {
-      console.error(`Failed to read file ${path}:`, error);
       return null;
     }
   }
@@ -98,18 +90,11 @@ export class GitHubService {
       try {
         const response = await fetch('/api/admin/content', {
           method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            action: 'update',
-            path: update.path,
-            content: update.content,
-          }),
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ action: 'update', path: update.path, content: update.content }),
         });
         return response.ok;
       } catch (error) {
-        console.error(`Failed to update file locally: ${update.path}`, error);
         return false;
       }
     }
@@ -117,60 +102,42 @@ export class GitHubService {
     if (!this.octokit) return false;
     try {
       const branch = this.config.branch || 'main';
-      
-      // Get current file to get SHA
       let sha: string | undefined;
       try {
-        const currentFile = await this.octokit.rest.repos.getContent({
+        const currentFile: any = await this.octokit.rest.repos.getContent({
           owner: this.config.username,
           repo: this.config.repository,
           path: update.path,
           ref: branch,
         });
-        if ('sha' in currentFile.data) {
-          sha = currentFile.data.sha;
-        }
-      } catch {
-        // File doesn't exist yet, no SHA needed
-      }
-
-      const contentBase64 = Buffer.from(update.content).toString('base64');
+        sha = currentFile.data.sha;
+      } catch (e) {}
 
       await this.octokit.rest.repos.createOrUpdateFileContents({
         owner: this.config.username,
         repo: this.config.repository,
         path: update.path,
         message: update.message,
-        content: contentBase64,
+        content: Buffer.from(update.content).toString('base64'),
         sha,
         branch,
       });
-
       return true;
     } catch (error) {
-      console.error(`Failed to update file ${update.path}:`, error);
       return false;
     }
   }
 
-  async uploadImage(path: string, content: Buffer | string, message: string): Promise<boolean> {
+  async uploadImage(path: string, content: string, message: string): Promise<boolean> {
     if (this.config.token === 'local') {
       try {
-        const base64Content = typeof content === 'string' ? content : content.toString('base64');
         const response = await fetch('/api/admin/content', {
           method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            action: 'upload',
-            path,
-            content: base64Content,
-          }),
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ action: 'upload', path, content }),
         });
         return response.ok;
       } catch (error) {
-        console.error(`Failed to upload image locally: ${path}`, error);
         return false;
       }
     }
@@ -178,20 +145,16 @@ export class GitHubService {
     if (!this.octokit) return false;
     try {
       const branch = this.config.branch || 'main';
-      const contentBase64 = typeof content === 'string' ? content : content.toString('base64');
-
       await this.octokit.rest.repos.createOrUpdateFileContents({
         owner: this.config.username,
         repo: this.config.repository,
         path,
         message,
-        content: contentBase64,
+        content, // base64 content
         branch,
       });
-
       return true;
     } catch (error) {
-      console.error(`Failed to upload image ${path}:`, error);
       return false;
     }
   }
@@ -201,17 +164,11 @@ export class GitHubService {
       try {
         const response = await fetch('/api/admin/content', {
           method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            action: 'delete',
-            path,
-          }),
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ action: 'delete', path }),
         });
         return response.ok;
       } catch (error) {
-        console.error(`Failed to delete file locally: ${path}`, error);
         return false;
       }
     }
@@ -219,15 +176,14 @@ export class GitHubService {
     if (!this.octokit) return false;
     try {
       const branch = this.config.branch || 'main';
-      
-      const currentFile = await this.octokit.rest.repos.getContent({
+      const currentFile: any = await this.octokit.rest.repos.getContent({
         owner: this.config.username,
         repo: this.config.repository,
         path,
         ref: branch,
       });
 
-      if ('sha' in currentFile.data) {
+      if (currentFile.data.sha) {
         await this.octokit.rest.repos.deleteFile({
           owner: this.config.username,
           repo: this.config.repository,
@@ -238,10 +194,8 @@ export class GitHubService {
         });
         return true;
       }
-
       return false;
     } catch (error) {
-      console.error(`Failed to delete file ${path}:`, error);
       return false;
     }
   }
@@ -251,19 +205,13 @@ export class GitHubService {
       try {
         const response = await fetch('/api/admin/content', {
           method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            action: 'list',
-            path,
-          }),
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ action: 'list', path }),
         });
         if (!response.ok) return [];
         const data = await response.json();
         return data.files || [];
       } catch (error) {
-        console.error(`Failed to list files locally: ${path}`, error);
         return [];
       }
     }
@@ -280,15 +228,12 @@ export class GitHubService {
 
       if (Array.isArray(response.data)) {
         return response.data
-          .filter(item => item.type === 'file')
-          .map(item => item.path);
+          .filter((item: any) => item.type === 'file')
+          .map((item: any) => item.path);
       }
-
       return [];
     } catch (error) {
-      console.error(`Failed to list files in ${path}:`, error);
       return [];
     }
   }
 }
-

@@ -40,7 +40,7 @@ export async function POST(request: NextRequest) {
 
     // ÖNƏMLİ: Cookie adı session.ts ilə eyni olmalıdır: "admin-session"
     response.cookies.set('admin-session', encoded, {
-      httpOnly: true,
+      httpOnly: false,
       secure: process.env.NODE_ENV === 'production',
       sameSite: 'lax',
       maxAge: 86400, // 24 saat

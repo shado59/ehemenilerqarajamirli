@@ -36,10 +36,13 @@ export default function AdminDashboard() {
   }, []);
 
   const loadStats = async () => {
+    await new Promise(resolve => setTimeout(resolve, 100));
+    
     const session = getSession();
     if (!session) {
       router.push('/admin/login');
       return;
+    }
     }
 
     try {

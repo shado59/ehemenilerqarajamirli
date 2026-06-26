@@ -8,16 +8,6 @@ export interface AdminSession {
 
 const SESSION_COOKIE_NAME = 'admin-session';
 
-export function createSession(session: AdminSession): void {
-  const sessionData = JSON.stringify(session);
-  const encoded = btoa(unescape(encodeURIComponent(sessionData)));
-
-  if (typeof window !== 'undefined') {
-    // path=/ mütləqdir ki, cookie bütün saytda (xüsusilə middleware-də) görünsün
-    document.cookie = `${SESSION_COOKIE_NAME}=${encoded}; path=/; max-age=86400; sameSite=lax`;
-  }
-}
-
 export function getSession(): AdminSession | null {
   if (typeof window === 'undefined') return null;
 
@@ -25,7 +15,7 @@ export function getSession(): AdminSession | null {
   if (!match) return null;
 
   try {
-    const decoded = decodeURIComponent(escape(atob(match[2])));
+    const decoded = atob(match[2]);
     return JSON.parse(decoded) as AdminSession;
   } catch {
     return null;
@@ -37,3 +27,6 @@ export function destroySession(): void {
     document.cookie = `${SESSION_COOKIE_NAME}=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT`;
   }
 }
+
+// createSession funksiyasını sildik, çünki artıq API (Server) tərəfində yaradırıq.
+export function createSession() {}

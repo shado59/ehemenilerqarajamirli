@@ -1,6 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { GitHubService } from '@/lib/github-service';
-import { createSession } from '@/lib/session';
 
 export async function POST(request: NextRequest) {
   try {
@@ -8,10 +7,7 @@ export async function POST(request: NextRequest) {
     const { username, repository, token, branch } = body;
 
     if (!username || !repository || !token) {
-      return NextResponse.json(
-        { error: 'Missing required fields' },
-        { status: 400 }
-      );
+      return NextResponse.json({ error: 'Məlumatlar əskikdir' }, { status: 400 });
     }
 
     const githubService = new GitHubService({
@@ -21,39 +17,21 @@ export async function POST(request: NextRequest) {
       branch: branch || 'main',
     });
 
-    // Test connection
+    // 1. GitHub ilə bağlantını yoxla
     const connected = await githubService.testConnection();
     if (!connected) {
-      return NextResponse.json(
-        { error: 'Failed to connect to GitHub repository' },
-        { status: 401 }
-      );
+      return NextResponse.json({ error: 'GitHub bağlantısı uğursuz oldu (Token və ya User səhvdir)' }, { status: 401 });
     }
 
-    // Validate branch
+    // 2. Branch-ı yoxla
     const branchValid = await githubService.validateBranch();
     if (!branchValid) {
-      return NextResponse.json(
-        { error: 'Branch not found' },
-        { status: 400 }
-      );
+      return NextResponse.json({ error: 'Göstərilən Branch tapılmadı' }, { status: 400 });
     }
-
-    // Create session
-    createSession({
-      username,
-      repository,
-      token,
-      branch: branch || 'main',
-      createdAt: Date.now(),
-    });
 
     return NextResponse.json({ success: true });
   } catch (error) {
     console.error('Login error:', error);
-    return NextResponse.json(
-      { error: 'Internal server error' },
-      { status: 500 }
-    );
+    return NextResponse.json({ error: 'Daxili server xətası' }, { status: 500 });
   }
 }

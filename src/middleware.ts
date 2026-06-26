@@ -3,21 +3,27 @@ import type { NextRequest } from 'next/server';
 
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
-  const session = request.cookies.get('admin-session');
 
+  // 1. LOGIN SƏHİFƏSİNƏ HƏR ZAMAN İCAZƏ VER
+  if (pathname === '/admin/login') {
+    return NextResponse.next();
+  }
+
+  // 2. YALNIZ /ADMIN İLƏ BAŞLAYAN YOLLARI YOXLA
   if (pathname.startsWith('/admin')) {
-    // Login səhifəsinə hər zaman icazə ver
-    if (pathname === '/admin/login') return NextResponse.next();
+    const session = request.cookies.get('admin-session');
     
-    // Sessiya yoxdursa login-ə yönləndir
+    // Əgər sessiya yoxdursa, login səhifəsinə yönləndir
     if (!session) {
-      return NextResponse.redirect(new URL('/admin/login', request.url));
+      const url = new URL('/admin/login', request.url);
+      return NextResponse.redirect(url);
     }
   }
 
   return NextResponse.next();
 }
 
+// BU HİSSƏ ÇOX VACİBDİR: ANA SƏHİFƏ VƏ DİGƏR STATİK FAYLLARI BURADAN KƏNAR TUTURUQ
 export const config = {
   matcher: ['/admin/:path*'],
 };

@@ -7,41 +7,26 @@ export interface AdminSession {
 }
 
 const SESSION_COOKIE_NAME = 'admin-session';
-const SESSION_MAX_AGE = 24 * 60 * 60 * 1000; // 24 saat
 
 export function createSession(session: AdminSession): void {
   const sessionData = JSON.stringify(session);
-  // Azerbaijani hərflərini (ə, ş, ç...) qorumaq üçün Safe Base64 encoding
   const encoded = btoa(unescape(encodeURIComponent(sessionData)));
 
   if (typeof window !== 'undefined') {
-    document.cookie = `${SESSION_COOKIE_NAME}=${encoded}; path=/; max-age=${SESSION_MAX_AGE / 1000}; sameSite=lax`;
+    // path=/ mütləqdir ki, cookie bütün saytda (xüsusilə middleware-də) görünsün
+    document.cookie = `${SESSION_COOKIE_NAME}=${encoded}; path=/; max-age=86400; sameSite=lax`;
   }
 }
 
 export function getSession(): AdminSession | null {
-  let sessionCookieValue: string | undefined;
+  if (typeof window === 'undefined') return null;
 
-  if (typeof window !== 'undefined') {
-    const match = document.cookie.match(new RegExp('(^| )' + SESSION_COOKIE_NAME + '=([^;]+)'));
-    if (match) {
-      sessionCookieValue = match[2];
-    }
-  }
-
-  if (!sessionCookieValue) return null;
+  const match = document.cookie.match(new RegExp('(^| )' + SESSION_COOKIE_NAME + '=([^;]+)'));
+  if (!match) return null;
 
   try {
-    const decoded = decodeURIComponent(escape(atob(sessionCookieValue)));
-    const session = JSON.parse(decoded) as AdminSession;
-
-    // Sessiya vaxtı bitibsə sil
-    if (Date.now() - session.createdAt > SESSION_MAX_AGE) {
-      destroySession();
-      return null;
-    }
-
-    return session;
+    const decoded = decodeURIComponent(escape(atob(match[2])));
+    return JSON.parse(decoded) as AdminSession;
   } catch {
     return null;
   }
@@ -49,6 +34,6 @@ export function getSession(): AdminSession | null {
 
 export function destroySession(): void {
   if (typeof window !== 'undefined') {
-    document.cookie = `${SESSION_COOKIE_NAME}=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/`;
+    document.cookie = `${SESSION_COOKIE_NAME}=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT`;
   }
 }

@@ -3,35 +3,43 @@ import { NextRequest, NextResponse } from 'next/server';
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    
-    // Front-end-dən fərqli adlarla gələ biləcək bütün dəyişənləri tuturuq
-    const repoName = body.repositoryName || body.repoName || body.repository;
-    const scopeKey = body.scopeKey || body.scope_key || body.scope;
-    const githubToken = body.githubToken || body.token || body.github_token;
-    const branch = body.branch || 'main'; // əgər gəlməzsə default main
 
-    // Konsolda yoxlamaq üçün (Vercel Logs-da görünəcək)
-    console.log("Gələn məlumatlar:", { repoName, scopeKey, hasToken: !!githubToken });
+    const username  = body.username  || '';
+    const repository = body.repository || body.repositoryName || body.repoName || '';
+    const token     = body.token     || body.githubToken || '';
+    const branch    = body.branch    || 'main';
 
-    // Xanaların dolub-dolmadığını yoxlayan dəqiq kontrol
-    if (!repoName || !scopeKey || !githubToken) {
-      return NextResponse.json({ 
-        error: `Bütün xanaları doldurun. Çatışmayan: ${!repoName ? 'Repo ' : ''}${!scopeKey ? 'ScopeKey ' : ''}${!githubToken ? 'Token' : ''}` 
+    if (!username || !repository || !token) {
+      return NextResponse.json({
+        error: `Bütün xanaları doldurun. Çatışmayan: ${!username ? 'Username ' : ''}${!repository ? 'Repository ' : ''}${!token ? 'Token' : ''}`
       }, { status: 400 });
     }
 
-    // Əgər sistemində Vercel panelində təyin etdiyin bir SCOPE_KEY varsa onu yoxla
-    const envScopeKey = process.env.SCOPE_KEY;
-    if (envScopeKey && scopeKey !== envScopeKey) {
-      return NextResponse.json({ error: 'Daxil edilən Scope Key sistemdəki ilə uyğun gəlmir.' }, { status: 403 });
+    // GitHub-la real bağlantı yoxlaması
+    const githubCheck = await fetch(
+      `https://api.github.com/repos/${username}/${repository}`,
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+          Accept: 'application/vnd.github+json',
+        },
+      }
+    );
+
+    if (!githubCheck.ok) {
+      return NextResponse.json({
+        error: 'GitHub məlumatları yanlışdır. Username, repository adı və ya token-i yoxlayın.'
+      }, { status: 401 });
     }
 
-    // İstəsən bura birbaşa GitHub API yoxlanışı qoya bilərsən, ya da uğurlu keçid verə bilərsən.
-    // İndiki halda giriş bloklanmasın deyə sessiyanı təsdiqləyirik:
+    // Sessiya məlumatlarını base64 JSON olaraq cookie-yə yaz
+    const sessionData = JSON.stringify({ username, repository, token, branch, createdAt: Date.now() });
+    const encoded = Buffer.from(sessionData).toString('base64');
+
     const response = NextResponse.json({ success: true, message: 'Giriş uğurludur.' });
 
-    // Cookie təyini
-    response.cookies.set('admin_token', 'secure_admin_session_active', {
+    // ÖNƏMLİ: Cookie adı session.ts ilə eyni olmalıdır: "admin-session"
+    response.cookies.set('admin-session', encoded, {
       httpOnly: true,
       secure: process.env.NODE_ENV === 'production',
       sameSite: 'lax',

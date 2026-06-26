@@ -1,34 +1,40 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { SignJWT } from 'jose';
 
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    const { username, password, scopeKey } = body;
+    // Şəkildəki input adlarına uyğun dəyişənlər
+    const { githubUsername, repositoryName, branch, githubToken } = body;
 
-    const envUsername = process.env.ADMIN_USERNAME || 'admin';
-    const envPassword = process.env.ADMIN_PASSWORD || 'RarsKiv2_Secure_Pass_2026';
-    const envScopeKey = process.env.SCOPE_KEY;
-
-    // Əgər Vercel-də SCOPE_KEY quraşdırılıbsa yoxla
-    if (envScopeKey && scopeKey !== envScopeKey) {
-      return NextResponse.json({ error: 'Kritik xəta: Scope Key yanlışdır.' }, { status: 403 });
+    if (!githubUsername || !repositoryName || !branch || !githubToken) {
+      return NextResponse.json({ error: 'Bütün xanaları doldurun.' }, { status: 400 });
     }
 
-    if (username !== envUsername || password !== envPassword) {
-      return NextResponse.json({ error: 'İstifadəçi adı və ya şifrə səhvdir.' }, { status: 401 });
+    // GitHub API vasitəsilə verilən Token-in və Repozitoriyanın doğruluğunu yoxlayırıq
+    const githubApiUrl = `https://api.github.com/repos/${githubUsername}/${repositoryName}/branches/${branch}`;
+    
+    const ghResponse = await fetch(githubApiUrl, {
+      method: 'GET',
+      headers: {
+        'Authorization': `token ${githubToken}`,
+        'Accept': 'application/vnd.github.v3+json',
+        'User-Agent': 'Nextjs-Admin-Panel'
+      },
+      // Cache-i bağlayırıq ki, anlıq yoxlasın
+      cache: 'no-store'
+    });
+
+    if (!ghResponse.ok) {
+      return NextResponse.json({ 
+        error: 'GitHub doğrulaması uğursuz oldu. Məlumatları və ya Token icazələrini (repo scope) yoxlayın.' 
+      }, { status: 401 });
     }
 
-    // Token yaratmaq (jose Edge Runtime-da tam stabil işləyir)
-    const secret = new TextEncoder().encode(process.env.JWT_SECRET || 'fallback_secret_key_32_chars_long!!');
-    const token = await new SignJWT({ username, role: 'admin' })
-      .setProtectedHeader({ alg: 'HS256' })
-      .setExpirationTime('2h')
-      .sign(secret);
+    // Əgər GitHub repoya girişi təsdiqlədisə, sessiya yaradırıq
+    const response = NextResponse.json({ success: true, message: 'GitHub bağlantısı uğurludur.' });
 
-    const response = NextResponse.json({ success: true, message: 'Giriş uğurludur' });
-
-    response.cookies.set('admin_token', token, {
+    // Brauzerdə admin sessiyasını saxlayırıq
+    response.cookies.set('admin_token', 'gh_authenticated_session', {
       httpOnly: true,
       secure: process.env.NODE_ENV === 'production',
       sameSite: 'lax',

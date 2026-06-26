@@ -19,7 +19,7 @@ import {
   Hammer
 } from 'lucide-react';
 
-export default function AdminDashboard() {
+export default async function AdminDashboard() {
   const router = useRouter();
   const [stats, setStats] = useState({
     timeline: 0,

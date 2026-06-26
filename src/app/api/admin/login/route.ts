@@ -1,44 +1,43 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { GitHubService } from '@/lib/github-service';
-import { cookies } from 'next/headers';
+import { SignJWT } from 'jose';
 
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    const { username, repository, token, branch } = body;
+    const { username, password, scopeKey } = body;
 
-    const githubService = new GitHubService({
-      username,
-      repository,
-      token,
-      branch: branch || 'main',
-    });
+    const envUsername = process.env.ADMIN_USERNAME || 'admin';
+    const envPassword = process.env.ADMIN_PASSWORD || 'RarsKiv2_Secure_Pass_2026';
+    const envScopeKey = process.env.SCOPE_KEY;
 
-    const connected = await githubService.testConnection();
-    if (!connected) {
-      return NextResponse.json({ error: 'GitHub bağlantısı uğursuz oldu' }, { status: 401 });
+    // Əgər Vercel-də SCOPE_KEY quraşdırılıbsa yoxla
+    if (envScopeKey && scopeKey !== envScopeKey) {
+      return NextResponse.json({ error: 'Kritik xəta: Scope Key yanlışdır.' }, { status: 403 });
     }
 
-    const branchValid = await githubService.validateBranch();
-    if (!branchValid) {
-      return NextResponse.json({ error: 'Branch tapılmadı' }, { status: 400 });
+    if (username !== envUsername || password !== envPassword) {
+      return NextResponse.json({ error: 'İstifadəçi adı və ya şifrə səhvdir.' }, { status: 401 });
     }
 
-    // SESSİYA MƏLUMATINI HAZIRLA
-    const sessionData = JSON.stringify({ username, repository, token, branch: branch || 'main', createdAt: Date.now() });
-    const encodedSession = Buffer.from(sessionData).toString('base64');
+    // Token yaratmaq (jose Edge Runtime-da tam stabil işləyir)
+    const secret = new TextEncoder().encode(process.env.JWT_SECRET || 'fallback_secret_key_32_chars_long!!');
+    const token = await new SignJWT({ username, role: 'admin' })
+      .setProtectedHeader({ alg: 'HS256' })
+      .setExpirationTime('2h')
+      .sign(secret);
 
-    // KÜKİNİ SERVERDƏ YARAT (ƏN ETİBARLI YOL)
-    cookies().set('admin-session', encodedSession, {
-      httpOnly: true, // Təhlükəsizlik üçün
+    const response = NextResponse.json({ success: true, message: 'Giriş uğurludur' });
+
+    response.cookies.set('admin_token', token, {
+      httpOnly: true,
       secure: process.env.NODE_ENV === 'production',
       sameSite: 'lax',
+      maxAge: 7200, // 2 saat
       path: '/',
-      maxAge: 60 * 60 * 24 // 24 saat
     });
 
-    return NextResponse.json({ success: true });
-  } catch (error) {
-    return NextResponse.json({ error: 'Server xətası' }, { status: 500 });
+    return response;
+  } catch (error: any) {
+    return NextResponse.json({ error: 'Server xətası: ' + error.message }, { status: 500 });
   }
 }

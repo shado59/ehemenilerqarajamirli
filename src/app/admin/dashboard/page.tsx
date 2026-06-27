@@ -104,7 +104,10 @@ export default function AdminDashboard() {
       <div className="flex">
         <aside className="w-64 bg-white dark:bg-neutral-800 border-r border-neutral-200 dark:border-amber-500/20 p-6 min-h-screen">
           <h1 className="text-xl font-bold text-neutral-800 dark:text-amber-100 mb-8">Admin Panel</h1>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 013ee5a7544d354af968b90dcd3e8cc260ad5ced
           <nav className="space-y-2">
             {menuItems.map((item) => {
               const Icon = item.icon;
@@ -120,7 +123,6 @@ export default function AdminDashboard() {
               );
             })}
           </nav>
-
           <button
             onClick={handleLogout}
             className="mt-8 flex items-center gap-3 px-4 py-3 rounded-lg text-red-500 hover:bg-red-500/10 transition-colors w-full"
@@ -134,7 +136,11 @@ export default function AdminDashboard() {
           <div className="mb-8">
             <h2 className="text-3xl font-bold text-neutral-800 dark:text-amber-100 mb-2">Dashboard</h2>
             <p className="text-neutral-500 dark:text-amber-100/60">
+<<<<<<< HEAD
               {connectionStatus === 'connected' ? 'GitHub ilə bağlı' : 'Bağlantı kəsildi'}
+=======
+              {connectionStatus === 'connected' ? 'GitHub ile bagli' : 'Baglanti kesildi'}
+>>>>>>> 013ee5a7544d354af968b90dcd3e8cc260ad5ced
             </p>
           </div>
 

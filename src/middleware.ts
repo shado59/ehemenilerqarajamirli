@@ -26,7 +26,10 @@ export function middleware(request: NextRequest) {
 
   // 4. Qorunan admin panel səhifələri üçün token yoxlanışı
   const token = request.cookies.get('admin-session')?.value;
+<<<<<<< HEAD
 
+=======
+>>>>>>> 013ee5a7544d354af968b90dcd3e8cc260ad5ced
   if (!token) {
     if (pathname.startsWith('/api/')) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });

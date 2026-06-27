@@ -104,15 +104,11 @@ export default function AdminDashboard() {
       <div className="flex">
         <aside className="w-64 bg-white dark:bg-neutral-800 border-r border-neutral-200 dark:border-amber-500/20 p-6 min-h-screen">
           <h1 className="text-xl font-bold text-neutral-800 dark:text-amber-100 mb-8">Admin Panel</h1>
-<<<<<<< HEAD
-
-=======
->>>>>>> 013ee5a7544d354af968b90dcd3e8cc260ad5ced
           <nav className="space-y-2">
             {menuItems.map((item) => {
               const Icon = item.icon;
               return (
-                
+                <a
                   key={item.href}
                   href={item.href}
                   className="flex items-center gap-3 px-4 py-3 rounded-lg text-neutral-600 dark:text-amber-100/80 hover:bg-amber-500/10 hover:text-amber-600 dark:hover:text-amber-100 transition-colors"
@@ -136,11 +132,7 @@ export default function AdminDashboard() {
           <div className="mb-8">
             <h2 className="text-3xl font-bold text-neutral-800 dark:text-amber-100 mb-2">Dashboard</h2>
             <p className="text-neutral-500 dark:text-amber-100/60">
-<<<<<<< HEAD
-              {connectionStatus === 'connected' ? 'GitHub ilə bağlı' : 'Bağlantı kəsildi'}
-=======
               {connectionStatus === 'connected' ? 'GitHub ile bagli' : 'Baglanti kesildi'}
->>>>>>> 013ee5a7544d354af968b90dcd3e8cc260ad5ced
             </p>
           </div>
 
@@ -171,7 +163,7 @@ export default function AdminDashboard() {
                 { label: 'Manage Artifacts', href: '/admin/artifacts' },
                 { label: 'Manage Gallery', href: '/admin/gallery' },
               ].map((action, idx) => (
-                
+                <a
                   key={idx}
                   href={action.href}
                   className="px-4 py-3 bg-amber-50 dark:bg-amber-500/10 border border-amber-200 dark:border-amber-500/20 rounded-lg text-amber-700 dark:text-amber-100 hover:bg-amber-100 dark:hover:bg-amber-500/20 transition-colors text-center font-medium"

@@ -17,10 +17,19 @@ export function getSession(): AdminSession | null {
   if (!match) return null;
 
   try {
-    const decoded = atob(match[2]);
-    return JSON.parse(decoded) as AdminSession;
+    const raw = match[2];
+    // URL-encoded ola bilər, əvvəlcə decode et
+    const decoded = decodeURIComponent(raw);
+    // Base64 decode
+    const json = atob(decoded);
+    return JSON.parse(json) as AdminSession;
   } catch {
-    return null;
+    // İkinci cəhd: birbaşa JSON kimi oxu
+    try {
+      return JSON.parse(decodeURIComponent(match[2])) as AdminSession;
+    } catch {
+      return null;
+    }
   }
 }
 

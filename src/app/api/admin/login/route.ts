@@ -34,7 +34,7 @@ export async function POST(request: NextRequest) {
 
     // Sessiya məlumatlarını base64 JSON olaraq cookie-yə yaz
     const sessionData = JSON.stringify({ username, repository, token, branch, createdAt: Date.now() });
-    const encoded = Buffer.from(sessionData).toString('base64');
+    const encoded = btoa(unescape(encodeURIComponent(sessionData)));
 
     const response = NextResponse.json({ success: true, message: 'Giriş uğurludur.' });
 
